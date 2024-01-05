@@ -23,9 +23,9 @@ RUN apk --no-cache update --repository=https://dl-cdn.alpinelinux.org/alpine/edg
 
 RUN apk --no-cache update --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community/ && \
     apk --no-cache add --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community/ \
-    python3-dev 
-    python3 
-    py3-pip 
+    python3-dev \
+    python3 \
+    py3-pip \
     aws-cli && \
     rm -rf /var/cache/apk/*
 
