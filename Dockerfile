@@ -20,8 +20,8 @@ RUN apk --no-cache update && \
         g++ \
         zip \
         git \
-        openssh && \
-    pip --no-cache-dir install awscli virtualenv && \
+        openssh \
+        aws-cli && \
     update-ca-certificates && \
     rm -rf /var/cache/apk/*
 
