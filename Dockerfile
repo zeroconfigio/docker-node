@@ -3,12 +3,9 @@ FROM node:${NODE_VERSION}-alpine
 
 WORKDIR /work
 
-RUN apk --no-cache update && \
-    apk --no-cache add \
+RUN apk --no-cache update --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main/ && \
+    apk --no-cache add --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main/ \
         ca-certificates \
-        python3-dev \
-        python3 \
-        py-pip \
         docker \
         groff \
         less \
@@ -20,9 +17,16 @@ RUN apk --no-cache update && \
         g++ \
         zip \
         git \
-        openssh \
-        aws-cli && \
+        openssh && \
     update-ca-certificates && \
+    rm -rf /var/cache/apk/*
+
+RUN apk --no-cache update --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community/ && \
+    apk --no-cache add --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community/ \
+    python3-dev 
+    python3 
+    py3-pip 
+    aws-cli && \
     rm -rf /var/cache/apk/*
 
 ENTRYPOINT [ "/bin/sh", "-c" ]
