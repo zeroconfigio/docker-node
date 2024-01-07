@@ -15,12 +15,18 @@
 
 ### Architectures
 
+#### Supported
+
 - amd64
 - arm64/v8
+
+#### Not Supported
+
 - arm/v7
 - arm/v6
 - ppc64le
 - s390x
+
 
 ## Usage
 
