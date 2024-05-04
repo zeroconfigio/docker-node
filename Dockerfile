@@ -17,6 +17,7 @@ RUN apk --no-cache update --repository=https://dl-cdn.alpinelinux.org/alpine/edg
         g++ \
         zip \
         git \
+        libssl3 \
         openssh && \
     update-ca-certificates && \
     rm -rf /var/cache/apk/*
