@@ -33,13 +33,13 @@
 Command:
 
 ```bash
-docker run -it --rm zeroconfigio/node:18-alpine "node --version"
+docker run -it --rm zeroconfigio/node:20-alpine "node --version"
 ```
 
 Output Example:
 
 ```bash
-v18.0.0
+v20.0.0
 ```
 
 ## Author
