@@ -17,7 +17,7 @@ jobs:
 
     strategy:
       matrix:
-        version: [18, 20, lts]
+        version: [20, lts]
 
     permissions:
       packages: write
