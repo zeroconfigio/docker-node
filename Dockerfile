@@ -30,6 +30,6 @@ RUN rm -fr \
   /usr/bin/aws_completer \
   /usr/lib/python*/site-packages/awscli/data/ac.index \
   /usr/lib/python*/site-packages/awscli/examples \
-  && find /usr/lib/python* -name completions-1*.json -delete
+  && find /usr/lib/python* -name "completions-1*.json" -delete
 
 ENTRYPOINT [ "/bin/sh", "-c" ]
