@@ -1,4 +1,4 @@
-fname: Hadolint
+name: Hadolint
 
 on: [push]
 
