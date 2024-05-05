@@ -18,16 +18,22 @@ RUN apk --no-cache update --repository=https://dl-cdn.alpinelinux.org/alpine/edg
         zip \
         git \
         libssl3 \
-        openssh && \
-    update-ca-certificates && \
-    rm -rf /var/cache/apk/*
+        openssh \
+        python3-dev \
+        python3 \
+        py3-pip \
+    && update-ca-certificates \
+    && rm -rf /var/cache/apk/*
 
 RUN apk --no-cache update --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community/ && \
     apk --no-cache add --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community/ \
-    python3-dev \
-    python3 \
-    py3-pip \
     aws-cli && \
     rm -rf /var/cache/apk/*
+
+RUN rm -fr \
+  /usr/bin/aws_completer \
+  /usr/lib/python*/site-packages/awscli/data/ac.index \
+  /usr/lib/python*/site-packages/awscli/examples \
+  && find /usr/lib/python* -name completions-1*.json -delete
 
 ENTRYPOINT [ "/bin/sh", "-c" ]
