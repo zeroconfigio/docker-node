@@ -22,13 +22,9 @@ RUN apk --no-cache update --repository=https://dl-cdn.alpinelinux.org/alpine/edg
         python3-dev \
         python3 \
         py3-pip \
+        aws-cli \
     && update-ca-certificates \
     && rm -rf /var/cache/apk/*
-
-RUN apk --no-cache update --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community/ && \
-    apk --no-cache add --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community/ \
-    aws-cli && \
-    rm -rf /var/cache/apk/*
 
 RUN rm -fr \
   /usr/bin/aws_completer \
