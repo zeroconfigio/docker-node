@@ -3,7 +3,7 @@ FROM node:${NODE_VERSION}-alpine
 
 WORKDIR /work
 
-RUN apk add --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main/ \
+RUN apk --no-cache add --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main/ \
         ca-certificates \
         docker \
         groff \
