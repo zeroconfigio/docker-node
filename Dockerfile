@@ -3,8 +3,8 @@ FROM node:${NODE_VERSION}-alpine
 
 WORKDIR /work
 
-RUN apk --no-cache update --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main/ && \
-    apk --no-cache add --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main/ \
+RUN apk update --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main/ && \
+    apk add --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main/ \
         ca-certificates \
         docker \
         groff \
@@ -23,10 +23,10 @@ RUN apk --no-cache update --repository=https://dl-cdn.alpinelinux.org/alpine/edg
         python3 \
         py3-pip \
         aws-cli \
-    && update-ca-certificates \
-    && rm -rf /var/cache/apk/*
+    && update-ca-certificates
 
-RUN rm -fr \
+RUN rm -rf \
+  /var/cache/apk/* \
   /usr/bin/aws_completer \
   /usr/lib/python*/site-packages/awscli/data/ac.index \
   /usr/lib/python*/site-packages/awscli/examples \
